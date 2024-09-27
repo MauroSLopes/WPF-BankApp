@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="WPF_BankApp.UserControls.LoginScreen.UserLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_BankApp.UserControls.LoginScreen"
+             xmlns:ComponentTextBox="clr-namespace:WPF_BankApp.UserControls.Components.TextBox"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Login" FontSize="20" FontWeight="Bold" VerticalAlignment="Bottom"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="0,10,0,0" Foreground="LightGray" Text="Email" FontSize="16" VerticalAlignment="Bottom"></TextBlock>
+            <ComponentTextBox:UserTextBox Margin="0,10" TextPlaceholder="example@example.com" Height="40" Grid.Row="1"></ComponentTextBox:UserTextBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Foreground="LightGray" Text="Password" FontSize="16" VerticalAlignment="Bottom" ></TextBlock>
+            <ComponentTextBox:UserPasswordBox Margin="0,10" TextPlaceholder="********" Height="40" Grid.Row="1"></ComponentTextBox:UserPasswordBox>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Foreground="LightBlue" Text="Forgot Password?" Cursor="Hand" 
+                       VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,5,0"
+                       FontSize="16"></TextBlock>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Margin="0,5,0,0" Height="40" Background="LightBlue" 
+                        Content="Login" FontSize="16" Foreground="White"
+                        BorderBrush="LightBlue">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="4"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="Don't have an account?"></TextBlock>
+                    <TextBlock Grid.Column="1" Cursor="Hand" Foreground="LightBlue" VerticalAlignment="Top" 
+                               HorizontalAlignment="Left" Text=" Register"></TextBlock>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

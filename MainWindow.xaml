@@ -1,0 +1,24 @@
+﻿<Window x:Class="WPF_BankApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:LoginScreen="clr-namespace:WPF_BankApp.UserControls.LoginScreen"
+        xmlns:local="clr-namespace:WPF_BankApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--<TextBox Background="Green" Height="40" Width="300"/>-->
+        <LoginScreen:UserLogin VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300"></LoginScreen:UserLogin>
+        <Image Grid.Column="1" Panel.ZIndex="2" Width="200" Source="/Resources/Images/CsharpLogo.png"></Image>
+        <Rectangle Fill="BlueViolet" Grid.Column="1" >
+            <Rectangle.Effect>
+                <DropShadowEffect Direction="90" BlurRadius="10" Opacity="0.5"/>
+            </Rectangle.Effect>
+        </Rectangle>
+    </Grid>
+</Window>
