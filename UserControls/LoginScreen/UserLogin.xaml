@@ -29,7 +29,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <TextBlock Foreground="LightGray" Text="Password" FontSize="16" VerticalAlignment="Bottom" ></TextBlock>
-            <ComponentTextBox:UserPasswordBox Margin="0,10" TextPlaceholder="********" Height="40" Grid.Row="1"></ComponentTextBox:UserPasswordBox>
+            <ComponentTextBox:UserPasswordBox x:Name="Password"  Margin="0,10" TextPlaceholder="********" Height="40" Grid.Row="1"></ComponentTextBox:UserPasswordBox>
         </Grid>
         <Grid Grid.Row="4">
             <Grid.RowDefinitions>
@@ -49,9 +49,9 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Margin="0,5,0,0" Height="40" Background="LightBlue" 
+                <Button Name="btn_Login" Grid.Column="1" Margin="0,5,0,0" Height="40" Background="LightBlue" 
                         Content="Login" FontSize="16" Foreground="White"
-                        BorderBrush="LightBlue">
+                        BorderBrush="LightBlue" Click="btn_Login_Click">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="4"></Setter>
